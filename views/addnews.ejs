@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <title>Add News</title>
+</head>
+<body>
+    <div className="container" style="padding: 10px;"> 
+        <div class="row">
+            <a href="../home"><h1 style="color: red;font-size: 4rem;">NewsFeed</h1></a>
+            
+        </div>
+        <div class="row">
+            <h3 style="color: slategrey; font-size: 2rem;">News Editing Page</h3>
+        </div>
+        <div class="row" style="display: block;margin-left: auto;margin-right: auto; background-color: aliceblue;">
+            <form style="padding: 20px;padding-left: 50px; font-size: 1.2rem;" action="/addedNews" id="formAddUser" method="POST" enctype="multipart/form-data">
+                <div class="form-group" style="padding: 20px;">
+                    <b><label for="exTitle1">Title:</label></b>
+                    <input style="margin-left:5rem ;" name="title" type="text" className="form-control" id="exTitle1" placeholder="NewsFeed Title" > 
+                </div> 
+                <div class="form-group" style="padding: 20px;">
+                    <b><label for="exAuthor1">Author:</label></b>
+                    <input style="margin-left:4rem ;" value="<%=newPerson%>"  name="author" type="text" className="form-control" id="exAuthor1" readonly> 
+                </div>
+                <div class="form-group" style="padding: 20px;">
+                    <b><label for="excateg1">Category:</label></b>
+                    <input style="margin-left:3rem ;" type="checkbox" id="cat1" name="country" value="Country">
+                    <label for="cat1">Country</label><br>
+                    <input style="margin-left:8.8rem ;" type="checkbox" id="cat2" name="cg" value="Chhattisgarh">
+                    <label for="cat2">Chhattisgarh</label><br>
+                    <input style="margin-left:8.8rem ;" type="checkbox" id="cat3" name="politics" value="Politics">
+                    <label for="cat3">Politics</label><br>
+                    <input style="margin-left:8.8rem ;" type="checkbox" id="cat4" name="overseas" value="Overseas">
+                    <label for="cat4">Overseas</label><br>
+                    <input style="margin-left:8.8rem ;" type="checkbox" id="cat5" name="history" value="History">
+                    <label for="cat5">History</label><br>
+                    <input style="margin-left:8.8rem ;" type="checkbox" id="cat6" name="fashion" value="Fashion">
+                    <label for="cat6">Fashion</label><br>
+                    <input style="margin-left:8.8rem ;" type="checkbox" id="cat7" name="sale" value="Sale">
+                    <label for="cat7">Sale</label><br>
+                    <input style="margin-left:8.8rem ;" type="checkbox" id="cat8" name="durgBhilai" value="Durg-Bhilai">
+                    <label for="cat8">Durg-Bhilai</label><br>
+                    <input style="margin-left:8.8rem ;" type="checkbox" id="cat9" name="jobCareer" value="Job-Career">
+                    <label for="cat9">Job-Career</label><br>
+                    <input style="margin-left:8.8rem ;" type="checkbox" id="cat10" name="religion" value="Religion">
+                    <label for="cat10">Religion</label><br>
+                    <input style="margin-left:8.8rem ;" type="checkbox" id="cat11" name="games" value="Games">
+                    <label for="cat11">Games</label><br>
+                    <input style="margin-left:8.8rem ;" type="checkbox" id="cat12" name="food" value="Food">
+                    <label for="cat12">Food</label><br>
+                    <input style="margin-left:8.8rem ;" type="checkbox" id="cat13" name="opinion" value="Opinion">
+                    <label for="cat13">Opinion</label><br>
+                </div>
+                <div class="form-group" style="padding: 20px;">
+                    <b><label for="exDescrp1">Content: </label></b>
+                    <textarea name="description" style="margin-left: 50px;display: inline-block;vertical-align: top;height:300px;width:600px;overflow:scroll;" id="exDescrp1" placeholder="Enter your Content Here...."></textarea>
+                    <!-- <input style="margin-left:2rem ;font-size: 82%; overflow: scroll; width:600px; height: 42px;" name="description" type="text" className="form-control" id="exDescrp1" placeholder="Description" >  -->
+                </div>
+                <!-- <div class="form-group" style="padding: 20px;">
+                    <label for="exQuote1">Quote:</label>
+                    <input name="quote" type="text" className="form-control" id="exQuote1" placeholder="Quote" > 
+                </div> -->
+                <div class="form-group" style="padding: 20px;">
+                    <b><label for="exUrl1">Image:</label></b>
+                    <input  style="margin-left:3rem ;" name="url" type="file" className="form-control" id="exUrl1"> 
+                </div>
+                <button type="submit" style="background-color:red;color: white;" onclick="checker()">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function checker(){
+            if(window.confirm("Confirm Submission?")){
+                document.getElementById("formAddUser").submit();
+            } else {
+                return;
+            }
+            }
+    </script>
+</body>
+</html>

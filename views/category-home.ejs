@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html oncontextmenu="return false">
+<head>
+<title>NewsFeed</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+<link rel="stylesheet" type="text/css" href="assets/css/font.css">
+<link rel="stylesheet" type="text/css" href="assets/css/li-scroller.css">
+<link rel="stylesheet" type="text/css" href="assets/css/slick.css">
+<link rel="stylesheet" type="text/css" href="assets/css/jquery.fancybox.css">
+<link rel="stylesheet" type="text/css" href="assets/css/theme.css">
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+<!--[if lt IE 9]>
+<script src="assets/js/html5shiv.min.js"></script>
+<script src="assets/js/respond.min.js"></script>
+<![endif]-->
+	
+</head>
+<body>
+<div id="preloader">
+  <div id="status">&nbsp;</div>
+</div>
+<a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
+<div class="container">
+  <header id="header">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="header_top">
+          
+         <div class="row">
+      <div class="col-lg-12 col-md-12">
+        <div class="latest_newsarea"> <span>Breaking News</span>
+          <ul id="ticker01" class="news_sticker">
+            <%const newList2 = [...newList]; %>
+            <% newList2.reverse().slice(0,5).map(i =>{%>
+              <li><a href="#"><%=i.title%></a></li>
+              <%}).join("")%>
+          </ul>
+         
+        </div>
+      </div>
+    </div>
+        </div>
+      </div>
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="header_bottom">
+          <div class="logo_area"><a href="../home" class="logo"><img src="images/logo.jpg" alt=""></a></div>
+          <div class="add_banner"><a href="#"><img src="images/728x90.png" alt=""></a></div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section id="navArea">
+    <nav class="navbar navbar-inverse" role="navigation">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav main_nav" id="van">
+          <%const newList3 = [...newList]; %>
+          <% newList3.reverse().slice(0,8).map(i =>{%>
+              <li><a href="../pages/single_page/<%=i._id%>"><%=i.title %></a></li>
+            <%}).join("")%>
+          </ul>
+      </div>
+    </nav>
+  </section>
+	
+  
+  <section id="contentSection">
+    <div class="row">
+      <div class="col-lg-8 col-md-8 col-sm-8">
+        <div class="left_content">
+          <div class="single_post_content">
+            <h2><span id="categ"></span></h2>
+            <div class="single_post_content_left">
+              <ul class="business_catgnav  wow fadeInDown" id="leftContent">
+                <%const newList5 = [...newList]; %>
+                <% newList5.reverse().slice(0,1).map(i =>{%>
+                  <li>
+                    <figure class="bsbig_fig"> <a href="../pages/single_page/<%=i._id%>" class="featured_img"> <img alt="" src="<%=i.url%>"> <span class="overlay"></span> </a>
+                      <figcaption> <a href="../pages/single_page/<%=i._id%>"><strong><%=i.title%></strong></a> </figcaption>
+                      <p><%=i.description %></p>
+                    </figure>
+                  </li>  
+                  <%}).join("")%>
+              </ul>
+            </div>
+            <div class="single_post_content_right">
+              <ul class="spost_nav" id="rightContent">
+                <%const newList4 = [...newList]; %>
+                <% newList4.reverse().map(i =>{%>
+                  <li>
+                    <div class="media wow fadeInDown"> <a href="../pages/single_page/<%=i._id%>" class="media-left"> <img alt="" src="<%=i.url %>"> </a>
+                      <div class="media-body"> <a href="../pages/single_page/<%=i._id%>" class="catg_title"><strong><%= i.title%></strong></a> </div>
+                    </div>
+                  </li>
+                  <%}).join("")%>
+              </ul>
+            </div>
+          </div>
+          
+          
+          
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4">
+		   <div class="single_sidebar wow fadeInDown">
+            
+            <a class="sideAdd" href="#"><img src="images/ad1.jpeg" alt=""></a> </div>
+		  
+        <aside class="right_content">
+         
+			
+         
+          <div class="single_sidebar wow fadeInDown">
+            <a class="sideAdd" href="#"><img src="images/ad1.jpeg" alt=""></a> </div>
+			<div class="single_sidebar wow fadeInDown">
+            <a class="sideAdd" href="#"><img src="images/ad2.jpeg" alt=""></a> </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+  <footer id="footer">
+    <div class="footer_top">
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-4">
+          <div class="footer_widget wow fadeInLeftBig">
+            <h2>Social Media</h2>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+          <div class="footer_widget wow fadeInDown">
+            <h2>Tag</h2>
+            <ul class="tag_nav" id="tags">
+              <%const newList6 = [...newList]; %>
+              <% newList6.reverse().slice(0,7).map(i =>{%>
+                <li><a href="#"><%=i.category%></a></li>
+                <%}).join("")%>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+          <div class="footer_widget wow fadeInRightBig">
+            <h2>Contact</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <address>
+            Perfect News,1238 S . 123 St.Suite 25 Town City 3333,USA Phone: 123-326-789 Fax: 123-546-567
+            </address>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer_bottom">
+      <p class="copyright">Copyright &copy; 2045 <a href="../home">NewsFeed</a> Powered by <a href="http://wesigntechnologies.in/"> Wesign Technologies Pvt. Ltd.</a></p>
+    </div>
+  </footer>
+</div>
+<script src="assets/js/jquery.min.js"></script> 
+<script src="assets/js/wow.min.js"></script> 
+<script src="assets/js/bootstrap.min.js"></script> 
+<script src="assets/js/slick.min.js"></script> 
+<script src="assets/js/jquery.li-scroller.1.0.js"></script> 
+<script src="assets/js/jquery.newsTicker.min.js"></script> 
+<script src="assets/js/jquery.fancybox.pack.js"></script> 
+<script src="assets/js/custom.js"></script>
+<script>
+  // const tags = [{title:"देश"}, {title:"विदेश"},{title:"विदेश"},{title:"विदेश"},{title:"विदेश"}];
+  // document.getElementById("tags").innerHTML = tags.map(i =>` <li><a href="#">${i.title}</a></li>`).join("")
+            // const Latest = [{title:"Title 01"},{title:"Title 02"},{title:"Title 03"},{title:"Title 04"}];
+            // document.getElementById("ticker01").innerHTML = Latest.map(i => `<li><a href="#">${i.title}</a></li>`).join("");
+            const li1 = document.createElement("li");
+              const li2 = document.createElement("li");
+              li1.className="active";
+              li1.innerHTML = `<a href="/home"><span class="fa fa-home desktop-home"></span><span class="mobile-show">Home</span></a>`;
+              li2.innerHTML = `<a href="/pages/contact">संपर्क</a>`;
+              const newChild = document.getElementById("van");
+              // const Ele = [{title:"Title 01"},{title:"Title 03"},{title:"Title 04"},{title:"Title 05"},{title:"Title 06"},{title:"Title 07"},{title:"Title 08"}]
+            // newChild.innerHTML = Ele.map(i =>` <li><a href="#">${i.title}</a></li>`).join("")
+            newChild.appendChild(li2);
+            newChild.prepend(li1);
+
+    // page heading
+    document.getElementById("categ").innerHTML = "सेल";
+    // display news
+    // const dNew = [{url:"https://bit.ly/2YlFW35", title:"Title 01"},{url:"https://bit.ly/2YlFW35", title:"Title 02"},{url:"https://bit.ly/2YlFW35", title:"Title 03"},{url:"https://bit.ly/2YlFW35", title:"Title 04"},{url:"https://bit.ly/2YlFW35", title:"Title 05"},{url:"https://bit.ly/2YlFW35", title:"Title 06"}]
+    // document.getElementById("rightContent").innerHTML = dNew.map(i => `
+    // <li>
+    //               <div class="media wow fadeInDown"> <a href="#" class="media-left"> <img alt="" src="${i.url}"> </a>
+    //                 <div class="media-body"> <a href="3" class="catg_title"><strong>${i.title}</strong></a> </div>
+    //               </div>
+    //             </li>
+    // `).join("");
+    // document.getElementById("leftContent").innerHTML = dNew.slice(0,1).map(i =>`
+    // <li>
+    //               <figure class="bsbig_fig"> <a href="#" class="featured_img"> <img alt="" src="${i.url}"> <span class="overlay"></span> </a>
+    //                 <figcaption> <a href="#"><strong>${i.title}</strong></a> </figcaption>
+    //                 <p>${i.title}</p>
+    //               </figure>
+    //             </li>  
+    // `);
+</script>
+</body>
+</html>

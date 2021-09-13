@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Showing the DB</title>
+</head>
+<body>
+     
+        <% newList.map(i=> {%>
+            <h2><%= i.title %></h2>
+            <p><%= i.description %></p>
+            <blockquote><%= i.quote %></blockquote>
+            <p><%= i.category %></p>
+            <img src="<%= i.url %>"/>
+            <p><%= i.author %></p>         
+        <%}) %>
+     
+    <h1>Welcome to Database</h1>
+</body>
+</html>
