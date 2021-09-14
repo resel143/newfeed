@@ -5,7 +5,7 @@ mongoURI = 'mongodb+srv://reshul:reshul%40123@newsfeeddeploy01.mv98l.mongodb.net
 
 const mongoose = require("mongoose");
 
-mongoose.connect(MONGOLAB_URI || mongoURI,{
+mongoose.connect(MONGODB_URI || mongoURI,{
     useNewUrlParser:true,
     useUnifiedTopology:true,
     useCreateIndex:true
