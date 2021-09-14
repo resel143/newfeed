@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb+srv://reshul:reshul@123@newsfeeddeploy01.mv98l.mongodb.net/news?retryWrites=true&w=majority",{
+mongoose.connect("mongodb+srv://reshul:reshul%40123@newsfeeddeploy01.mv98l.mongodb.net/NewsFeed",{
     useNewUrlParser:true,
     useUnifiedTopology:true,
     useCreateIndex:true

@@ -195,8 +195,7 @@ app.get("/pages/login",(req,res)=>{
 // app.post backend
 
 app.post("/login",async (req,res)=>{
-    newUser.find({},(err, item)=>{
-        // console.log(item);
+    newUser.find({},(err, item)=>{    
         let num = 0;
         item.map(i => {
             if(i.username === req.body.username && i.password === req.body.password){
