@@ -102,7 +102,7 @@
             <div class="single_page_content" id="mainpart"> 
               <% Values.map(i => {%>
                 <img class="img-center" src="../../uploads/<%=i.url%>" />
-                <p id="cop"><%=i.description %></p>   
+                <p id="cop"><%-i.description %></p>   
               <%}) %>
               
             </div>

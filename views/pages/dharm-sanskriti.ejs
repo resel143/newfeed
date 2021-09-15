@@ -105,7 +105,7 @@
                 <li>
                   <figure class="bsbig_fig"> <a href="../pages/single_page/<%=i._id%>" class="featured_img"> <img alt="" src="../uploads/<%=i.url%>"> <span class="overlay"></span> </a>
                     <figcaption> <a href="#"><strong><%=i.title%></strong></a> </figcaption>
-                    <p><%=i.description%></p>
+                    <p><%-i.description%></p>
                   </figure>
                 </li>
                 <% }).join("")%>
