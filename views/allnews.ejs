@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div className="container" style="padding: 10px;"> 
+        <div class="row">
+            <a href="../home"><h1 style="color: red;font-size: 4rem;">NewsFeed</h1></a>
+            
+        </div>
+       <ul id="news" style="list-style-type: none;margin:50px;line-height: 30px;">
+            <%newList.reverse().map(i =>{%>
+               <div style="float: left;">
+                    <li>
+                        <div id="ntitle" style="float: left;width:450px;padding: 20px;"><%=i.title%></div>
+                        <div id="nauthor" style="float: left;width: 250px;padding: 20px;"><%=i.author%></div>
+                        <div id="ndel" style="width: 100px;float: left;padding: 20px;"><a href="../delete/<%=i._id%>"><i class="fas fa-trash" style="color: red;margin-left: 3rem;cursor:pointer"></i></a></div>
+                        <div id="ndel" style="width: 100px;float: left;padding: 20px;"><a href="../edit/<%=i._id%>"><i class="fas fa-user-edit" style="color: blue;margin-left: 3rem;cursor:pointer"></i></a></div>
+                    </li>
+               </div>
+                <br>
+            <%})%>
+       </ul>
+       
+</body>
+</html>

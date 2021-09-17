@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewsFeed Editor Page</title>
+</head>
+<body>
+    <h1>NewsFeed</h1>
+    <div id="container" style="margin: 50px;">
+        <form action="/edited/<%= id %>" method="POST">
+            <div id="form-group" style="margin: 20px;">
+                <label for="exauthor">Author: </label>
+                <input id="exauthor" readonly value="<%=author%>" type="text" name="author" placeholder="Author">
+            </div>
+            <div id="form-group" style="margin: 20px;">
+                <label for="extitle">Title: </label>
+                <input type="text" value="<%=title%>" name="title" id="extitle" placeholder="Title">
+            </div>
+            <div id="form-group" style="margin: 20px;">
+                <label for="editor">Post: </label>
+                <textarea name="content" id="editor"><%-description%></textarea>
+            </div>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/29.2.0/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+        .create(document.getElementById("editor"))
+        .catch(e => console.log(`Error Caught`))
+
+        // document.getElementById("editor").style.backgroundColor=red;
+    </script>
+</body>
+</html>

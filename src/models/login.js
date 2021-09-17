@@ -8,6 +8,9 @@ const newSchema= new mongoose.Schema({
     password:{
         type:String,
         required:true
+    },
+    loggedin:{
+        type:String
     }
 });
 

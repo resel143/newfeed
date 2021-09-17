@@ -13,18 +13,21 @@
             <a href="../home"><h1 style="color: red;font-size: 4rem;">NewsFeed</h1></a>
             
         </div>
-        <div class="row">
+        <div id="row" style="position: absolute;left: 0px;">
             <h3 style="color: slategrey; font-size: 2rem;">News Editing Page</h3>
         </div>
-        <div class="row" style="display: block;margin-left: auto;margin-right: auto; background-color: aliceblue;">
+        <div id="col" style="position: absolute;right: 0px;">
+            <a href="../allnews"><button style="width: 200px;height: 40px;padding: 5px;background-color: #FF9702;color: white;">All News</button></a>
+        </div>
+        <div class="row" style="display: block;margin-left: auto;margin-right: auto;margin-top: 26px; background-color: aliceblue;">
             <form style="padding: 20px;padding-left: 50px; font-size: 1.2rem;" action="/addedNews" id="formAddUser" method="POST" enctype="multipart/form-data">
-                <div class="form-group" style="padding: 20px;">
+                <div class="form-group" style="padding:20px;">
                     <b><label for="exTitle1">Title:</label></b>
                     <input style="margin-left:5rem ;" name="title" type="text" className="form-control" id="exTitle1" placeholder="NewsFeed Title" > 
                 </div> 
                 <div class="form-group" style="padding: 20px;">
                     <b><label for="exAuthor1">Author:</label></b>
-                    <input style="margin-left:4rem ;" value="<%=newPerson%>"  name="author" type="text" className="form-control" id="exAuthor1" readonly> 
+                    <input style="margin-left:4rem ;" value="<%= newPerson %>"  name="author" type="text" className="form-control" id="exAuthor1" readonly> 
                 </div>
                 <div class="form-group" style="padding: 20px;">
                     <b><label for="excateg1">Category:</label></b>
@@ -71,6 +74,9 @@
                 </div>
                 <button type="submit" style="background-color:red;color: white;" onclick="checker()">Submit</button>
             </form>
+        </div>
+        <div id="col" style="position: absolute;right: 0px;">
+            <a href=""><button style="width: 200px;height: 40px;padding: 5px;background-color: red;color: white;">Log Out</button></a>
         </div>
     </div>
     <script src="https://cdn.ckeditor.com/ckeditor5/29.2.0/classic/ckeditor.js"></script>

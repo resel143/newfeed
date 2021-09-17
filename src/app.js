@@ -53,6 +53,45 @@ app.get("/home",(req,res)=>{
         })
     })
 })
+app.get("/allnews",(req,res)=>{
+    addNew.find({},(err, item)=>{
+        res.render("allnews",{
+            newList: item, 
+        })
+    })
+})
+// edit news
+app.get("/edit/:id",(req,res)=>{
+    // res.send(req.params.id);
+    addNew.find({_id: req.params.id},(err, item)=>{
+        item.map(i =>{
+            // res.send(i.title);
+            res.render("editnews",{
+                            id: i._id,
+                            title: i.title,
+                            description: i.description,
+                            author: i.author
+                        })
+        })
+        // item.map(i =>{
+        //     if(req.params.id === i._id){
+        //         res.render("editnews",{
+        //             title: i.title,
+        //             description: i.description,
+        //             author:i.author
+        //         })
+        //     }
+        // })
+    })
+})
+// delete news
+app.get("/delete/:id",(req,res)=>{
+    addNew.remove({_id:req.params.id},(err, delData)=>{
+        res.redirect("../allnews")
+    })
+    // res.send(req.params.id);
+})
+
 app.get("/pages/contact",(req,res)=>{
     addNew.find({},(err, item)=>{
         res.render("pages/contact",{
@@ -63,8 +102,7 @@ app.get("/pages/contact",(req,res)=>{
 })
 app.get("/pages/single_page/:_id",(req,res)=>{
     addNew.find({},(err, item)=>{
-        res.render("pages/single_page",{
-            
+        res.render("pages/single_page",{   
             newList: item,
             page: req.url
         })
@@ -179,11 +217,11 @@ app.use("/addnews",(req,res,next)=>{
 })
 
 // add news page
-// app.get("/addnews",(req,res)=>{
-//     res.render("addnews",{
-//         error:false
-//     });
-// })
+app.get("/addnews",(req,res)=>{
+    res.render("addnews",{
+        error:false
+    });
+})
 
 // login page
 app.get("/pages/login",(req,res)=>{
