@@ -60,7 +60,7 @@ app.get("/allnews",(req,res)=>{
         })
     })
 })
-// edit news
+// edit news GET method
 app.get("/edit/:id",(req,res)=>{
     // res.send(req.params.id);
     addNew.find({_id: req.params.id},(err, item)=>{
@@ -73,16 +73,14 @@ app.get("/edit/:id",(req,res)=>{
                             author: i.author
                         })
         })
-        // item.map(i =>{
-        //     if(req.params.id === i._id){
-        //         res.render("editnews",{
-        //             title: i.title,
-        //             description: i.description,
-        //             author:i.author
-        //         })
-        //     }
-        // })
     })
+})
+// edit news post to update method
+app.post("/edited/:id",(req,res)=>{
+    console.log(req.body);
+    console.log(req.params.id);
+    addNew.updateOne({_id:req.params.id},{$set:{title:req.body.title,description:req.body.content}}).then(()=>{console.log("content updated!")}).catch(err => {console.log("error in updation")});
+    res.redirect("../allnews");
 })
 // delete news
 app.get("/delete/:id",(req,res)=>{
